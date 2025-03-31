@@ -1,0 +1,11 @@
+10:28:40.467 [main] INFO  com.demoqa.utils.MyListener -- Open url - https://demoqa.com
+10:28:41.961 [main] INFO  com.demoqa.tests.TestBase -- Start test Check to - 'User name 'neuer' is displayed
+10:28:42.081 [main] INFO  com.demoqa.utils.MyListener -- We have to click element with locator - [[ChromeDriver: chrome on windows (06ce766b88689b2d87f634e03e4f0794)] -> css selector: .card:nth-child(6)]
+10:28:42.303 [main] INFO  com.demoqa.utils.MyListener -- We have to click element with locator - [[ChromeDriver: chrome on windows (06ce766b88689b2d87f634e03e4f0794)] -> xpath: //span[.='Login']]
+10:28:42.495 [main] INFO  com.demoqa.utils.MyListener -- We have to click element with locator - [[ChromeDriver: chrome on windows (06ce766b88689b2d87f634e03e4f0794)] -> id: userName]
+10:28:43.178 [main] INFO  com.demoqa.utils.MyListener -- We fill in [[ChromeDriver: chrome on windows (06ce766b88689b2d87f634e03e4f0794)] -> id: userName] wit value - [neuer]
+10:28:43.197 [main] INFO  com.demoqa.utils.MyListener -- We have to click element with locator - [[ChromeDriver: chrome on windows (06ce766b88689b2d87f634e03e4f0794)] -> id: password]
+10:28:43.603 [main] INFO  com.demoqa.utils.MyListener -- We fill in [[ChromeDriver: chrome on windows (06ce766b88689b2d87f634e03e4f0794)] -> id: password] wit value - [Neuer1234!]
+10:28:43.622 [main] INFO  com.demoqa.utils.MyListener -- We have to click element with locator - [[ChromeDriver: chrome on windows (06ce766b88689b2d87f634e03e4f0794)] -> id: login]
+10:28:45.273 [main] INFO  com.demoqa.tests.TestBase -- Stop test
+10:28:45.274 [main] INFO  com.demoqa.tests.TestBase -- *************************************

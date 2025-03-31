@@ -1,0 +1,11 @@
+run class
+mvn test -Dtest=SearchBookTests
+
+run a specific method
+mvn test -Dtest=AlertsTests#alertWithSelectTest
+
+run with browser selection
+mvn test -Dtest=AlertsTests#alertWithSelectTest -Dbrowser=firefox
+
+run with parameterization
+mvn test -Dgroups=parameters -Dusername=neuer -Dpassword=Neuer1234!

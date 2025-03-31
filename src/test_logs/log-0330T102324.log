@@ -1,0 +1,8 @@
+10:23:28.484 [main] INFO  com.demoqa.utils.MyListener -- Open url - https://demoqa.com
+10:23:30.668 [main] INFO  com.demoqa.tests.TestBase -- Start test Verify to - 'Result 'You selected Cancel' is displayed
+10:23:30.753 [main] INFO  com.demoqa.utils.MyListener -- We have to click element with locator - [[FirefoxDriver: firefox on windows (2b0e1b4a-0a29-4f90-93b6-d02c2a8d3dd5)] -> css selector: .card:nth-child(3)]
+10:23:31.130 [main] INFO  com.demoqa.utils.MyListener -- We have to click element with locator - [[FirefoxDriver: firefox on windows (2b0e1b4a-0a29-4f90-93b6-d02c2a8d3dd5)] -> xpath: //span[.='Alerts']]
+10:23:31.464 [main] INFO  com.demoqa.utils.MyListener -- We have to click element with locator - [[FirefoxDriver: firefox on windows (2b0e1b4a-0a29-4f90-93b6-d02c2a8d3dd5)] -> id: confirmButton]
+10:23:31.653 [main] INFO  com.demoqa.utils.MyListener -- We have alert with text - 'Do you confirm action?'
+10:23:32.803 [main] INFO  com.demoqa.tests.TestBase -- Stop test
+10:23:32.803 [main] INFO  com.demoqa.tests.TestBase -- *************************************
