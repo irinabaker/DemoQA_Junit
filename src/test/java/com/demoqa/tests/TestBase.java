@@ -17,7 +17,7 @@ public class TestBase {
 
     @BeforeEach
     public void init(TestInfo testInfo) {
-        driver = app.startTest();
+        driver = app.startTest(testInfo);
         logger.info("Start test " + testInfo.getDisplayName());
     }
 

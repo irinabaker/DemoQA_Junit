@@ -52,7 +52,7 @@ public class LoginTests extends TestBase {
         login.enterUserData("n",UserData.PASSWORD)
                 .clickOnLoginButton();
 
-        Assertions.assertTrue(new LoginPage(driver).verifyLoginButtonIsDisplayed());
+        Assertions.assertTrue(new ProfilePage(driver).verifyUserName(UserData.USER_NAME));
     }
 
 }

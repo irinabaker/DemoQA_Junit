@@ -1,7 +1,11 @@
 package com.demoqa.config;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.demoqa.pages.*;
 import com.demoqa.utils.MyListener;
+import org.junit.jupiter.api.TestInfo;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,13 +25,14 @@ public class ApplicationManager {
     public String browser;
     public WebDriver driver;
 
-    Logger logger = LoggerFactory.getLogger(ApplicationManager.class);
+    private static ExtentReports extent;
+    private static ExtentTest test;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
     }
 
-    public WebDriver startTest() {
+    public WebDriver startTest(TestInfo testInfo) {
 
         //  ChromeOptions options = new ChromeOptions();
         //options.addArguments("--headless=new"); // without opening a browser window
@@ -41,6 +46,11 @@ public class ApplicationManager {
         WebDriverListener listener = new MyListener();
         driver = new EventFiringDecorator<>(listener).decorate(driver);
 
+        ExtentSparkReporter reporter = new ExtentSparkReporter("target/ExtentReport.html");
+        extent = new ExtentReports();
+        extent.attachReporter(reporter);
+        test = extent.createTest(testInfo.getDisplayName());
+
         driver.get("https://demoqa.com");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -50,6 +60,8 @@ public class ApplicationManager {
     }
 
     public void stopTest() {
+
         driver.quit();
+        extent.flush();
     }
 }

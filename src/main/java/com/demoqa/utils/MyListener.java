@@ -1,15 +1,18 @@
 package com.demoqa.utils;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.WebDriverListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.Random;
 
 public class MyListener implements WebDriverListener {
 
@@ -37,6 +40,20 @@ public class MyListener implements WebDriverListener {
         logger.error("Target ", target);
         logger.error("================================");
         logger.error("Exception ", e.getMessage());
+
+        int i = new Random().nextInt(1000) + 1000;
+
+        String link = "screenshots/screen_" + i + ".png";
+        logger.info("Screen with error --> " + link);
+
+        WebDriver driver = (ChromeDriver) target;
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+        File tmp = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        try {
+            Files.copy(tmp,new File(link));
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     @Override
